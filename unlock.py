@@ -60,7 +60,7 @@ def luhn_checksum(imei):
 
 def tryUnlockBootloader(imei, checksum, failedAttempts = set([ ])):
   unlocked          = False
-  algoOEMcode       = 4000000000000000 # starting point
+  algoOEMcode       = 1000000000000000 # starting point
   countAttempts     = 0
 
   while(unlocked == False):
