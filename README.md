@@ -33,8 +33,4 @@ The original version was developed by [SkyEmi](https://github.com/SkyEmie). I ma
 
 **The application doesn't work. Is there anything I should have installed?**
 
-Yes, it was developed in python so it needs it to run, version 3. You can install the latest version from [here](https://www.python.org/downloads/).
-
-**The app on Windows doesn't detect my device even though it's connected and USB debugging is enabled. What could be the issue?**
-
-Windows most likely doesn't recognise your device in ADB mode. Install the universal ADB drivers from [here](http://dl.adbdriver.com/upload/adbdriver.zip), reboot your PC and try again.
+Yes, it was developed with python3 so it needs it to run, version 3. You can install the latest version from [here](https://www.python.org/downloads/).
