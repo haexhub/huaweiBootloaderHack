@@ -23,8 +23,10 @@ The original version was developed by [SkyEmi](https://github.com/SkyEmie). I ma
 3. Connect your device to the computer 
 
 4. ``` 
-    git clone 
-    cd 
+    git clone https://github.com/haexhub/huaweiBootloaderHack.git
+    cd huaweiBootloaderHack
+    python unlock.py <IMEI>
+    ```
 4. Wait for the application to detect your device. The device info should appear in the top left section.
 
 ## FAQ & Troubleshooting
