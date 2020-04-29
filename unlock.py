@@ -21,6 +21,7 @@ failedAttemptsFilename  = 'failedAttempts.json'
 # otherwise set isLimitAttemptEnabled to false
 limitAttempt            = 5
 isLimitAttemptEnabled   = True
+startingPoint           = 1000000000000000
 
 ###############################################################################
 
@@ -37,7 +38,7 @@ def writeFailedAttemptsToFile(filename = 'failedAttempts.json', failedAttempts =
   startTime = time.time()
   with open(filename, 'w') as file:
     json.dump(failedAttempts, file)
-  print('* saved file in {0} seconds *'.format(time.time() - startTime))
+    print('* saved file in {0} seconds *'.format(time.time() - startTime))
 
 
 def algoIncrementChecksum(imei, checksum, genOEMcode):
@@ -60,7 +61,7 @@ def luhn_checksum(imei):
 
 def tryUnlockBootloader(imei, checksum, failedAttempts = set([ ])):
   unlocked          = False
-  algoOEMcode       = 1000000000000000 # starting point
+  algoOEMcode       = startingPoint
   countAttempts     = 0
 
   while(unlocked == False):
@@ -68,8 +69,6 @@ def tryUnlockBootloader(imei, checksum, failedAttempts = set([ ])):
 
     while algoOEMcode in failedAttempts:
       algoOEMcode = algoIncrementChecksum(imei, checksum, algoOEMcode)
-
-    print('* shot {0} with code {1} *'.format(len(failedAttempts), algoOEMcode))
 
     answer = subprocess.run(
       ['fastboot', 'oem', 'unlock', str(algoOEMcode)]
@@ -84,9 +83,11 @@ def tryUnlockBootloader(imei, checksum, failedAttempts = set([ ])):
       failedAttempts.add(algoOEMcode)
 
     count = len(failedAttempts)
+    print('* shot {0} with code {1} *'.format(count, algoOEMcode))
+    
     # reboot in bootloader mode after limit of attempts is reached
     if count % (limitAttempt - 1) == 0 and isLimitAttemptEnabled == True:
-      answer = subprocess.run(
+      subprocess.run(
         ['fastboot', 'reboot', 'bootloader']
       , stdout = subprocess.DEVNULL
       , stderr = subprocess.DEVNULL

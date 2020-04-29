@@ -1,4 +1,4 @@
-# Huawei-honor-unlock-bootloader (Python 3)
+# Huawei-honor-unlock-bootloader
 
 ## Summary
 
@@ -6,7 +6,7 @@ After closing the official EMUI website, which allowed you to retrieve the code 
 
 It uses a bruteforce method, based on the Luhn algorithm and the IMEI identifier used by the manufacturer to generate the unlocking code.
 
-The original version was developed by [SkyEmi](https://github.com/SkyEmie). I made some tweaks for saving attempts to file, because brutforcing is taking a **looooooong** time. I'm trying to hack my P20 Pro with this and there, Huawei installed another obstacle. You can only try 5 attempts for inserting the unlook key, than your phone will restart automatically. So I had to reboot in fastboot mode every 4 attempts. This increases the amount of time while trying, but couldn't find a better solution. 
+The original version was developed by [SkyEmi](https://github.com/SkyEmie). I made some tweaks for saving failed attempts to file, because brutforcing is taking a **looooooong** time. I'm trying to hack my P20 Pro with this. Because Huawei placed another obstacle in th way, as you have 5 attempts for inserting the unlook key, than your phone will restart automatically. So I have to reboot in fastboot mode every 4 attempts. This increases the amount of time while trying, but couldn't find a better solution. 
 
 ## Instructions
 
@@ -25,9 +25,9 @@ The original version was developed by [SkyEmi](https://github.com/SkyEmie). I ma
 4. ``` 
     git clone https://github.com/haexhub/huaweiBootloaderHack.git
     cd huaweiBootloaderHack
-    python unlock.py <IMEI>
+    python3 unlock.py <IMEI>
     ```
-4. Wait for the application to detect your device. The device info should appear in the top left section.
+4. Make a few cups of coffee or tea => sleep => repeat :D
 
 ## FAQ & Troubleshooting
 
