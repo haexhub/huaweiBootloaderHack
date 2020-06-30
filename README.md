@@ -34,3 +34,4 @@ The original version was developed by [SkyEmi](https://github.com/SkyEmie). I ma
 **The application doesn't work. Is there anything I should have installed?**
 
 Yes, it was developed with python3 so it needs it to run. You can install the latest version from [here](https://www.python.org/downloads/).
+You also need [fastboot](https://www.droidwiki.org/wiki/Fastboot_(Tool)) installed on your system!
