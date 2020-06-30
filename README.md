@@ -12,13 +12,13 @@ The original version was developed by [SkyEmi](https://github.com/SkyEmie). I ma
 
 ### Connecting a device in ADB mode
 
-1. Enable developer options in Android.
+1. Enable developer options in Android at your phone.
 
-    * Android One: Go to Settings > System > About device and tap _Build number_ seven times to enable developer options.
+    * Go to Settings > System > About device > tap _Build number_ seven times to enable developer options.
 
 2. Enable USB debugging in Android.
 
-    * Android One: Go to Settings > System > Developer options and enable USB debugging.
+    * Go to Settings > System > Developer options and enable USB debugging.
 
 3. Connect your device to the computer 
 
