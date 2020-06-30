@@ -33,4 +33,4 @@ The original version was developed by [SkyEmi](https://github.com/SkyEmie). I ma
 
 **The application doesn't work. Is there anything I should have installed?**
 
-Yes, it was developed with python3 so it needs it to run, version 3. You can install the latest version from [here](https://www.python.org/downloads/).
+Yes, it was developed with python3 so it needs it to run. You can install the latest version from [here](https://www.python.org/downloads/).
