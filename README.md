@@ -1,4 +1,4 @@
-# Huawei-honor-unlock-bootloader
+# unlock Huawei bootloader
 
 ## Summary
 
@@ -33,4 +33,6 @@ The original version was developed by [SkyEmi](https://github.com/SkyEmie). I ma
 
 **The application doesn't work. Is there anything I should have installed?**
 
-Yes, it was developed with python3 so it needs it to run, version 3. You can install the latest version from [here](https://www.python.org/downloads/).
+Yes, it was developed with python3 so you'll need it. You can install the latest version from [here](https://www.python.org/downloads/).
+
+You also need [adb](https://www.xda-developers.com/install-adb-windows-macos-linux/) installed
