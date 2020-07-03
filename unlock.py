@@ -26,12 +26,17 @@ startingPoint           = 1000000000000000
 ###############################################################################
 
 def getFailedAttemptsFromFile(filename = 'failedAttempts.json'):
-  with open(filename, 'r') as file:
-    array = json.load(file)
-    if (type(array) == list):
-      return set(array)
-    else:
-      return set([ ])
+  try:
+
+    with open(filename, 'r') as file:
+      array = json.load(file)
+      if (type(array) == list):
+        return set(array)
+      else:
+        return set([ ])
+  
+  except:
+    return set([ ])
 
 
 def writeFailedAttemptsToFile(filename = 'failedAttempts.json', failedAttempts = [ ]):
@@ -61,13 +66,13 @@ def luhn_checksum(imei):
 
 def tryUnlockBootloader(imei, checksum, failedAttempts = set([ ])):
   unlocked          = False
-  algoOEMcode       = startingPoint
+  algoOEMcode       = 1000000000000000
   countAttempts     = 0
 
   while(unlocked == False):
     countAttempts += 1
 
-    while algoOEMcode in failedAttempts:
+    while algoOEMcode in failedAttempts or algoOEMcode < startingPoint:
       algoOEMcode = algoIncrementChecksum(imei, checksum, algoOEMcode)
 
     answer = subprocess.run(
