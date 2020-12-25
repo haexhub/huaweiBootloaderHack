@@ -66,7 +66,7 @@ def luhn_checksum(imei):
 
 def tryUnlockBootloader(imei, checksum, failedAttempts = set([ ])):
   unlocked          = False
-  algoOEMcode       = 1000000000000000
+  algoOEMcode       = 0000000000000000
   countAttempts     = 0
 
   while(unlocked == False):
@@ -98,8 +98,7 @@ def tryUnlockBootloader(imei, checksum, failedAttempts = set([ ])):
       , stderr = subprocess.DEVNULL
       )
 
-    # save failed attempts every 10 shots to file
-    if count % 10 == 0:
+    if count % 4 == 0:
       writeFailedAttemptsToFile(failedAttemptsFilename, list(failedAttempts))
 
     algoOEMcode = algoIncrementChecksum(imei, checksum, algoOEMcode)
