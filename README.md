@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # unlock Huawei bootloader
 
 ## Summary
@@ -12,13 +13,13 @@ The original version was developed by [SkyEmi](https://github.com/SkyEmie). I ma
 
 ### Connecting a device in ADB mode
 
-1. Enable developer options in Android.
+1. Enable developer options in Android at your phone.
 
-    * Android One: Go to Settings > System > About device and tap _Build number_ seven times to enable developer options.
+    * Go to Settings > System > About device > tap _Build number_ seven times to enable developer options.
 
 2. Enable USB debugging in Android.
 
-    * Android One: Go to Settings > System > Developer options and enable USB debugging.
+    * Go to Settings > System > Developer options and enable USB debugging.
 
 3. Connect your device to the computer 
 
@@ -34,5 +35,5 @@ The original version was developed by [SkyEmi](https://github.com/SkyEmie). I ma
 **The application doesn't work. Is there anything I should have installed?**
 
 Yes, it was developed with python3 so you'll need it. You can install the latest version from [here](https://www.python.org/downloads/).
-
 You also need [adb](https://www.xda-developers.com/install-adb-windows-macos-linux/) installed
+as well as [fastboot](https://www.droidwiki.org/wiki/Fastboot_(Tool))
