@@ -98,7 +98,7 @@ def tryUnlockBootloader(imei, checksum, failedAttempts = set([ ])):
       , stderr = subprocess.DEVNULL
       )
 
-    if (isLimitAttemptEnabled and count % 4 == 0) or (not isLimitAttemptEnabled and count % 500 == 0):
+    if (isLimitAttemptEnabled and count % 4 == 0) or (not isLimitAttemptEnabled and count % 100 == 0):
       writeFailedAttemptsToFile(failedAttemptsFilename, list(failedAttempts))
 
     algoOEMcode = algoIncrementChecksum(imei, checksum, algoOEMcode)
