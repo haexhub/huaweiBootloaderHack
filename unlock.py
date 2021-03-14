@@ -20,7 +20,7 @@ failedAttemptsFilename  = 'failedAttempts.json'
 # if your device has a limit of false attempts before reboot
 # otherwise set isLimitAttemptEnabled to false
 limitAttempt            = 5
-isLimitAttemptEnabled   = True
+isLimitAttemptEnabled   = False
 startingPoint           = 1000000000000000
 
 ###############################################################################
@@ -98,7 +98,7 @@ def tryUnlockBootloader(imei, checksum, failedAttempts = set([ ])):
       , stderr = subprocess.DEVNULL
       )
 
-    if count % 4 == 0:
+    if (isLimitAttemptEnabled and count % 4 == 0) or (not isLimitAttemptEnabled and count % 500 == 0):
       writeFailedAttemptsToFile(failedAttemptsFilename, list(failedAttempts))
 
     algoOEMcode = algoIncrementChecksum(imei, checksum, algoOEMcode)
