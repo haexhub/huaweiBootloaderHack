@@ -91,7 +91,7 @@ def tryUnlockBootloader(imei, checksum, failedAttempts = set([ ])):
     print('* shot {0} with code {1} *'.format(count, algoOEMcode))
     
     # reboot in bootloader mode after limit of attempts is reached
-    if (count % (limitAttempt - 1) == 0 and isLimitAttemptEnabled == True) or (count % 50000 == 0 and isLimitAttemptEnabled == False):
+    if (count % (limitAttempt - 1) == 0 and isLimitAttemptEnabled == True) or (count % 40000 == 0 and isLimitAttemptEnabled == False):
       subprocess.run(
         ['fastboot', 'reboot', 'bootloader']
       , stdout = subprocess.DEVNULL
